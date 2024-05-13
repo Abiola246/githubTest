@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miles Per Gallon Calculator</title>
+</head>
+<body>
+  <script>
+    // Initialize variables to store total miles and total gallons
+    var totalMiles = 0;
+    var totalGallons = 0;
+
+    // Ask the user for input until they choose to stop
+    while (true) {
+      // Prompt the user to enter miles driven for the tankful
+      var milesDriven = parseInt(prompt("Enter miles driven for this tankful (enter -1 to stop):"));
+      
+      // Check if the user chose to stop
+      if (milesDriven === -1) {
+        break;
+      }
+      
+      // Prompt the user to enter gallons used for the tankful
+      var gallonsUsed = parseInt(prompt("Enter gallons used for this tankful:"));
+
+      // Calculate miles per gallon for this tankful
+      var mpg = milesDriven / gallonsUsed;
+
+      // Output miles per gallon for this tankful
+      document.write("<p>Miles per gallon for this tankful: " + mpg.toFixed(2) + "</p>");
+
+      // Update total miles and total gallons
+      totalMiles += milesDriven;
+      totalGallons += gallonsUsed;
+    }
+
+    // Calculate combined miles per gallon
+    var combinedMPG = totalMiles / totalGallons;
+
+    // Output combined miles per gallon
+    document.write("<p>Combined miles per gallon for all tankfuls: " + combinedMPG.toFixed(2) + "</p>");
+  </script>
+</body>
+</html>
